@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		7F13ED862194C5B59F0981BC /* Pods_FolledoTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D64A6C0C79B74071EC4300 /* Pods_FolledoTinder.framework */; };
+		CD03AE5120E0B98F0018F1BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD03AE5020E0B98F0018F1BD /* LoginViewController.swift */; };
 		CD05B6D420DD9D2100985B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05B6D320DD9D2100985B21 /* AppDelegate.swift */; };
 		CD05B6D620DD9D2100985B21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05B6D520DD9D2100985B21 /* ViewController.swift */; };
 		CD05B6D920DD9D2100985B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD05B6D720DD9D2100985B21 /* Main.storyboard */; };
 		CD05B6DB20DD9D2900985B21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD05B6DA20DD9D2900985B21 /* Assets.xcassets */; };
 		CD05B6DE20DD9D2900985B21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD05B6DC20DD9D2900985B21 /* LaunchScreen.storyboard */; };
+		CD94793220E2E03300999E2E /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94793120E2E03300999E2E /* UpdateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		671F4D3145A47FD5A87DD5AE /* Pods-FolledoTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FolledoTinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FolledoTinder/Pods-FolledoTinder.debug.xcconfig"; sourceTree = "<group>"; };
 		A95418D343D32DBEF5E8C9C4 /* Pods-FolledoTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FolledoTinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-FolledoTinder/Pods-FolledoTinder.release.xcconfig"; sourceTree = "<group>"; };
+		CD03AE5020E0B98F0018F1BD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CD05B6D020DD9D2000985B21 /* FolledoTinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FolledoTinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD05B6D320DD9D2100985B21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD05B6D520DD9D2100985B21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +28,7 @@
 		CD05B6DA20DD9D2900985B21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD05B6DD20DD9D2900985B21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD05B6DF20DD9D2900985B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD94793120E2E03300999E2E /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		F5D64A6C0C79B74071EC4300 /* Pods_FolledoTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FolledoTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,6 +85,8 @@
 				CD05B6D320DD9D2100985B21 /* AppDelegate.swift */,
 				CD05B6D520DD9D2100985B21 /* ViewController.swift */,
 				CD05B6D720DD9D2100985B21 /* Main.storyboard */,
+				CD94793120E2E03300999E2E /* UpdateViewController.swift */,
+				CD03AE5020E0B98F0018F1BD /* LoginViewController.swift */,
 				CD05B6DA20DD9D2900985B21 /* Assets.xcassets */,
 				CD05B6DC20DD9D2900985B21 /* LaunchScreen.storyboard */,
 				CD05B6DF20DD9D2900985B21 /* Info.plist */,
@@ -202,8 +208,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD03AE5120E0B98F0018F1BD /* LoginViewController.swift in Sources */,
 				CD05B6D620DD9D2100985B21 /* ViewController.swift in Sources */,
 				CD05B6D420DD9D2100985B21 /* AppDelegate.swift in Sources */,
+				CD94793220E2E03300999E2E /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

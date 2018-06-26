@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             theConfig.clientKey = "iwillownappleonceimastercoding" //1
         }
         
+        Parse.initialize(with: config)
+        
+        //RUN THE CODE BELOW IN YOUR Terminal
         //parse-dashboard --appId folledotindercloneappid --masterKey iwillownappleonceimastercoding --serverURL "http://folledotinderserver.herokuapp.com/parse"
         
         return true

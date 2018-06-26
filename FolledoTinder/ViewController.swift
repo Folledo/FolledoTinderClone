@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+    
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(gestureRecognizer:))) //2 //5mins
         swipeLabel.addGestureRecognizer(gesture) //2 //6mins //this add the gesture on swipeLabel. Make sure to check "User Interaction Enabled" in the storyboard
     }
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 //wasDragged 2
     @objc func wasDragged(gestureRecognizer: UIPanGestureRecognizer) { //2 //5mins
         //print("dragged")
-        //7 minswhere is the user is trying to move outlets to
+        //7mins where is the user is trying to move outlets to
         let labelPoint = gestureRecognizer.translation(in: view) //2 //7mins translation returns a point identifying the new location of a view in the coordinate system of its designated superview
         swipeLabel.center = CGPoint(x: view.bounds.width / 2 + labelPoint.x, y: view.bounds.height / 2 + labelPoint.y) //2 //8mins How we update where this label should be. //The x means the width of the screen divided by 2 because it is in the middle + whatever the value is of labelPoint.x
         //print("x:\(swipeLabel.center.x) , y:\(swipeLabel.center.y)")
