@@ -53,6 +53,7 @@ class LoginViewController: UIViewController { //3
                         self.errorLabel.text = errorMessage //3
                     } else { //3
                         print("Sign Up Successful") //3
+                        self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //29mins if signup was successful, then let user update their info
                     } //3
                 } //3
             } //3
@@ -73,7 +74,8 @@ class LoginViewController: UIViewController { //3
                                 self.errorLabel.isHidden = false //3
                                 self.errorLabel.text = errorMessage //3
                             } else { //3
-                                print("Sign Up Successful") //3
+                                print("Login Successful") //3
+                                self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //29mins if signup was successful, then let user update their info
                             } //3
                         } //3
                         
@@ -96,5 +98,12 @@ class LoginViewController: UIViewController { //3
         } //3
     } //3
     
+    
+//viewDidAppear //4 //30mins
+    override func viewDidAppear(_ animated: Bool) { //4 //30mins check and see if current user is not equal to nil, if that is the case then we'll know they have logged in before and they're ready to use the app instead of the "updateSegue"
+        if PFUser.current() != nil { //4 //30mins //if current user is not empty...
+            self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //30mins
+        } //4 //30mins
+    } //4 //30mins
     
 }
