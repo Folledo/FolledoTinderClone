@@ -12,7 +12,11 @@
 //4 Adding User Details
 //5 Adding Users
 //6 Swiping Users
-//7 Location and Matches
+//7 Location and Matches    =
+/*                          = gives the ability to make sure that you're only doing matches with people who are in your location
+                            = see who you've matched with (both users said yes to each other)
+                            = chance to start messaging with them so that you can talk and chat with them
+ */
 
 import UIKit
 import Parse //1
@@ -38,10 +42,20 @@ class ViewController: UIViewController {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(gestureRecognizer:))) //2 //5mins
         matchImageView.addGestureRecognizer(gesture) //2 //6mins //this add the gesture on swipeLabel. Make sure to check "User Interaction Enabled" in the storyboard
         
-        let username = PFUser.current()?.username as! String
-        self.navItem.title = "Hi \(username)"
+        if let username = PFUser.current()?.username {
+            self.navItem.title = "Hi \(username)"
+        }
         
-        updateImage() //28mins
+        updateImage() //6 //28mins
+        
+        
+    //7 //1mins after allowing location usage in info.plist, this is how you grab the current user's location
+        PFGeoPoint.geoPointForCurrentLocation { (geoPoint, error) in //7 //2mins
+            if let point = geoPoint { //7 //2mins
+                PFUser.current()?["location"] = point //7 //2mins
+                PFUser.current()?.saveInBackground() //7 //3mins just simply save it //now that we have current user's location, we now have to update our query
+            }
+        }
     }
     
     
@@ -121,7 +135,17 @@ class ViewController: UIViewController {
             
             query.whereKey("objectId", notContainedIn: ignoredUsers) //6 //34mins check any users who have objectId that's inside the ignoreUsers, if they're in there then we dont want them to be a part of this query
             
+            
+            //7 //5mins first get the geopoint from the logged in user
+            if let geoPoint = PFUser.current()?["location"] as? PFGeoPoint { //7 //6mins if we get a geoPoint with lat and longitude then we proceed
+                
+                query.whereKey("location", withinGeoBoxFromSouthwest: PFGeoPoint(latitude: geoPoint.latitude - 1, longitude: geoPoint.longitude - 1), toNortheast: PFGeoPoint(latitude: geoPoint.latitude + 1, longitude: geoPoint.longitude + 1)) //7 //7mins built a box around the current user to only see other users inside that box
+                
+            }
+            
+            
             query.limit = 1 //6 //19mins limits the query to one at a time
+            
             query.findObjectsInBackground { (objects, error) in
                 if let users = objects  { //6 //20mins
                     for object in users { //6 //20mins make sure theres only one user
