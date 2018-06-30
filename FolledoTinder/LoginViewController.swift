@@ -25,7 +25,7 @@ class LoginViewController: UIViewController { //3
     @IBOutlet weak var loginSignupButton: UIButton! //3
     @IBOutlet weak var changeLoginSignupButton: UIButton! //3
     
-    var signUpMode = true //3
+    var signUpMode = false //3
     
     override func viewDidLoad() { //3
         super.viewDidLoad() //3
@@ -51,14 +51,15 @@ class LoginViewController: UIViewController { //3
                         } //3
                         self.errorLabel.isHidden = false //3
                         self.errorLabel.text = errorMessage //3
-                    } else { //3
+                    }
+                    
+                } else { //3
                         print("Sign Up Successful") //3
                         self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //29mins if signup was successful, then let user update their info
-                    } //3
                 } //3
             } //3
             
-        } else { //3 //21mins else log in
+        } else { //3 //21mins else loginMode
             
             if let username = usernameTextField.text { //3
                 if let password = passwordTextField.text { //3
@@ -67,16 +68,23 @@ class LoginViewController: UIViewController { //3
                         
                         if error != nil { //3
                             var errorMessage = "Log In Failed - Try Again" //3
-                            if let newError = error as? NSError { //3//15mins if error can be casted to an NSError which it shoul be able to
+                            if let newError = error as NSError? { //3//15mins if error can be casted to an NSError which it shoul be able to
                                 if let detailError = newError.userInfo["error"] as? String { //3
                                     errorMessage = detailError //3
                                 } //3
                                 self.errorLabel.isHidden = false //3
                                 self.errorLabel.text = errorMessage //3
-                            } else { //3
-                                print("Login Successful") //3
-                                self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //29mins if signup was successful, then let user update their info
-                            } //3
+                            }
+                        } else { //3
+                            print("Login Successful") //3
+                            
+                            if user?["isFemale"] != nil { //6 //7mins //if the current user's isFemale attribute has value then go straight to swiping other users
+                                self.performSegue(withIdentifier: "loginToSwipingSegue", sender: nil) //6 //7mins
+                            } else { //6 //8mins
+                                self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //30mins
+                            } //6 //8mins
+                            
+                            //self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //29mins if signup was successful, then let user update their info
                         } //3
                         
                     }) //3 //22mins since usernameTF and passwordTF are both optional, unwrap it first with if-let
@@ -102,7 +110,12 @@ class LoginViewController: UIViewController { //3
 //viewDidAppear //4 //30mins
     override func viewDidAppear(_ animated: Bool) { //4 //30mins check and see if current user is not equal to nil, if that is the case then we'll know they have logged in before and they're ready to use the app instead of the "updateSegue"
         if PFUser.current() != nil { //4 //30mins //if current user is not empty...
-            self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //30mins
+            
+            if PFUser.current()?["isFemale"] != nil { //6 //7mins //if the current user's isFemale attribute has value then go straight to swiping other users
+                self.performSegue(withIdentifier: "loginToSwipingSegue", sender: nil) //6 //7mins
+            } else { //6 //8mins
+                self.performSegue(withIdentifier: "updateSegue", sender: nil) //4 //30mins
+            } //6 //8mins
         } //4 //30mins
     } //4 //30mins
     

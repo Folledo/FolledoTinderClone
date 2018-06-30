@@ -45,9 +45,9 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
 //        } //4
         
         if interestedUserSwitch.isOn {
-            backgroundImageView.image = UIImage(named: "redBG")
+            self.backgroundImageView.image = UIImage(named: "redBG")
         } else {
-            backgroundImageView.image = UIImage(named: "blueBG")
+            self.backgroundImageView.image = UIImage(named: "blueBG")
         }
         
     //4 //33mins now get the photo to the imageView
@@ -105,16 +105,18 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
                             }
                             self.displayAlert(title: "Save Failed", message: errorMessage) //4 //display an alert
                             
-                        } else { //4
-                            print("Update Successful") //4 //24mins
-                            self.displayAlert(title: "Success!", message: "Update has been successful") //4 //display an alert
                         }
+                        
+                    } else { //4
+                        print("Update Successful") //4 //24mins
+                        self.performSegue(withIdentifier: "updateToSwipeSegue", sender: nil) //6 //2mins
+                        //self.displayAlert(title: "Success!", message: "Update has been successful") //4 //display an alert
                     }
                     
                 }) //end of saveInBackground
             }
         }
-    }
+    } //end of saveTapped
     
     
  //4//displayAlert method
@@ -127,9 +129,10 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
         self.present(alert, animated: true, completion: nil)
     }
     
+    
 //createWomen
     func createWomen() { //5 //3mins
-        let imageUrls = ["https://www.shutterstock.com/image-photo/beautiful-female-looks-camera-having-her-776697934", "https://thumb9.shutterstock.com/display_pic_with_logo/2797510/348952868/stock-photo-portrait-of-beautiful-girl-on-white-background-wearing-white-bathrobe-348952868.jpg", "https://thumb1.shutterstock.com/display_pic_with_logo/2967241/662130583/stock-photo-portrait-of-young-pretty-cheerful-girl-smiling-looking-at-camera-over-white-background-662130583.jpg", "https://thumb1.shutterstock.com/display_pic_with_logo/2000294/666220159/stock-photo-headshot-of-young-adorable-blonde-woman-with-cute-smile-on-white-background-666220159.jpg", "https://thumb7.shutterstock.com/display_pic_with_logo/2000294/1018725367/stock-photo-adorable-happy-young-blonde-woman-in-pink-knitted-hat-scarf-having-fun-drinking-hot-tea-from-mug-1018725367.jpg"] //5
+        let imageUrls = ["https://www.shutterstock.com/image-photo/pretty-smiling-joyfully-female-fair-hair-776697943", "https://thumb9.shutterstock.com/display_pic_with_logo/2797510/348952868/stock-photo-portrait-of-beautiful-girl-on-white-background-wearing-white-bathrobe-348952868.jpg", "https://thumb1.shutterstock.com/display_pic_with_logo/2967241/662130583/stock-photo-portrait-of-young-pretty-cheerful-girl-smiling-looking-at-camera-over-white-background-662130583.jpg", "https://thumb1.shutterstock.com/display_pic_with_logo/2000294/666220159/stock-photo-headshot-of-young-adorable-blonde-woman-with-cute-smile-on-white-background-666220159.jpg", "https://thumb7.shutterstock.com/display_pic_with_logo/2000294/1018725367/stock-photo-adorable-happy-young-blonde-woman-in-pink-knitted-hat-scarf-having-fun-drinking-hot-tea-from-mug-1018725367.jpg"] //5
         
         var counter = 0 //5
         for imageUrl in imageUrls { //5 //5mins
@@ -151,7 +154,7 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
                         if success { //5
                             print("Women User created!") //5
                         } else { //5
-                            print("Women User# NOT CREATED") //5
+                            print("Women User NOT CREATED") //5
                         } //5
                     } //5
                 } //5
