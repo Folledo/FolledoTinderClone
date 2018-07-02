@@ -44,10 +44,12 @@ class UpdateViewController: UIViewController, UINavigationControllerDelegate, UI
 //            backgroundImageView.image = UIImage(named: "blueBG") //4
 //        } //4
         
-        if interestedUserSwitch.isOn {
-            self.backgroundImageView.image = UIImage(named: "redBG")
-        } else {
-            self.backgroundImageView.image = UIImage(named: "blueBG")
+        if interestedUserSwitch.isTouchInside {
+            if interestedUserSwitch.isOn {
+                self.backgroundImageView.image = UIImage(named: "redBG")
+            } else {
+                self.backgroundImageView.image = UIImage(named: "blueBG")
+            }
         }
         
     //4 //33mins now get the photo to the imageView

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7F13ED862194C5B59F0981BC /* Pods_FolledoTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D64A6C0C79B74071EC4300 /* Pods_FolledoTinder.framework */; };
 		CD03AE5120E0B98F0018F1BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD03AE5020E0B98F0018F1BD /* LoginViewController.swift */; };
+		CD0547E320E9C42400862935 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0547E220E9C42400862935 /* MatchesViewController.swift */; };
+		CD0547E520E9CC6600862935 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0547E420E9CC6600862935 /* MatchTableViewCell.swift */; };
 		CD05B6D420DD9D2100985B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05B6D320DD9D2100985B21 /* AppDelegate.swift */; };
 		CD05B6D620DD9D2100985B21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05B6D520DD9D2100985B21 /* ViewController.swift */; };
 		CD05B6D920DD9D2100985B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD05B6D720DD9D2100985B21 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		671F4D3145A47FD5A87DD5AE /* Pods-FolledoTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FolledoTinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FolledoTinder/Pods-FolledoTinder.debug.xcconfig"; sourceTree = "<group>"; };
 		A95418D343D32DBEF5E8C9C4 /* Pods-FolledoTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FolledoTinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-FolledoTinder/Pods-FolledoTinder.release.xcconfig"; sourceTree = "<group>"; };
 		CD03AE5020E0B98F0018F1BD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CD0547E220E9C42400862935 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		CD0547E420E9CC6600862935 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		CD05B6D020DD9D2000985B21 /* FolledoTinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FolledoTinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD05B6D320DD9D2100985B21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD05B6D520DD9D2100985B21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				CD05B6D720DD9D2100985B21 /* Main.storyboard */,
 				CD03AE5020E0B98F0018F1BD /* LoginViewController.swift */,
 				CD94793120E2E03300999E2E /* UpdateViewController.swift */,
+				CD0547E220E9C42400862935 /* MatchesViewController.swift */,
+				CD0547E420E9CC6600862935 /* MatchTableViewCell.swift */,
 				CD05B6DA20DD9D2900985B21 /* Assets.xcassets */,
 				CD05B6DC20DD9D2900985B21 /* LaunchScreen.storyboard */,
 				CD05B6DF20DD9D2900985B21 /* Info.plist */,
@@ -209,7 +215,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD03AE5120E0B98F0018F1BD /* LoginViewController.swift in Sources */,
+				CD0547E520E9CC6600862935 /* MatchTableViewCell.swift in Sources */,
 				CD05B6D620DD9D2100985B21 /* ViewController.swift in Sources */,
+				CD0547E320E9C42400862935 /* MatchesViewController.swift in Sources */,
 				CD05B6D420DD9D2100985B21 /* AppDelegate.swift in Sources */,
 				CD94793220E2E03300999E2E /* UpdateViewController.swift in Sources */,
 			);
